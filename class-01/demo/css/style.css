@@ -1,0 +1,13 @@
+a {
+  text-decoration: none;
+}
+.nav-list {
+  color: darkgreen;
+  text-align: right;
+}
+
+.nav-item {
+  display: inline;
+  margin: 6px;
+}
+
