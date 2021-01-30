@@ -53,11 +53,11 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function sumAndMultiply(a, b, c) { //eslint-disable-line
-  var summ = a + b + c;
-  var multi = a * b * c;
-  var text1 = a + " and " + b + " and " + c + " sum to " + summ + ".";
-  var text2 = "The product of " + a + " and " + b + " and " + c + " is " + multi + "."
-  return [summ, multi, text1, text2];
+  var sumAll = sum(sum(a, b)[0], c)[0];
+  var sumAllText = a + ' and ' + b + ' and ' + c + ' sum to ' + sumAll + '.';
+  var multiplyAll = multiply(multiply(a, b)[0], c)[0];
+  var multiplyAllText = 'The product of ' + a + ' and ' + b + ' and ' + c + ' is ' + multiplyAll + '.';
+  return [sumAll, multiplyAll, sumAllText, multiplyAllText];
 }
 
 // Here is the test for sumAndMultiply(); uncomment it to run it
@@ -79,11 +79,10 @@ Test this function by hand in the console to get it working, and when you think 
 var testArray = [2, 3, 4]; //eslint-disable-line
 
 function sumArray(sumArr) { //eslint-disable-line
-  var summ = sum(sumArr[0], sum(sumArr[1], sumArr[2])[0])[0];
-  var text = sumArr[0] + "," + sumArr[1] + "," + sumArr[2] + " was passed in as an array of numbers, and " + summ + " is their sum.";
-  return [summ, text];
+  var sumArr  = sum(sum(sumArr[0], sumArr[1])[0], sumArr[2])[0];
+  var arrySumString = testArray[0]+','+ testArray[1]+','+ testArray[2]+ ' was passed in as an array of numbers,' + ' and ' + sumArr + ' is their sum.';
+  return [sumArr , arrySumString]
 }
-
 // Here is the test for sumArray(); uncomment it to run it
 
  testSumArray(testArray);
@@ -102,9 +101,9 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function multiplyArray(multArr) { //eslint-disable-line
-  var product = multiply(multArr[0], multiply(multArr[1], multArr[2])[0])[0];
-  var text = "The numbers " + multArr[0] + "," + multArr[1] + "," + multArr[2] + " have a product of " + product + ".";
-  return [product, text];
+  var multArr =  multiply(multiply(multArr[0], multArr[1])[0], multArr[2])[0];
+  var arrayMultString = 'The numbers '+testArray[0]+','+ testArray[1]+','+ testArray[2]+ ' have a product of ' + multArr+'.' ;
+  return [multArr , arrayMultString]
 }
 
 // Here is the test for multiplyArray(); uncomment it to run it
